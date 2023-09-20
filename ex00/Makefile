@@ -15,6 +15,12 @@ NAME = megaphone
 FLAGS = -Wall -Werror -Wextra -g3 -std=c++98 --pedantic
 RM = /bin/rm -f
 
+# ASCII COLORS #
+RED=\033[0;31m
+YELLOW=\033[0;33m
+BLUE=\033[0;34m
+END=\033[0m
+
 .SILENT:
 
 all: $(NAME)
