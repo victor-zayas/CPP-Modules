@@ -1,26 +1,25 @@
 
-#ifndef PHONBOOK_H
-#define PHONBOOK_H
-#endif
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-#include<iostream>
+#include <iostream>
 #include "contact.hpp"
 
-class PhonBook {
+class PhoneBook {
 public:
     Contact contacts[8];
 
-    PhonBook(){
+    PhoneBook() {
         for(int i = 0; i < 8; i++){
             contacts[i] = Contact();
         }
     }
-    PhonBook(const PhonBook &copy) {
+    PhoneBook(const PhoneBook &copy) {
         for (int i = 0; i < 8; i++) {
             contacts[i] = copy.contacts[i];
         }
     }
-    PhonBook &operator=(const PhonBook &other){
+    PhoneBook &operator=(const PhoneBook &other){
         if (this != &other){
             for (int i = 0; i < 8; i++) {
                 contacts[i] = other.contacts[i];
@@ -28,4 +27,7 @@ public:
         }
         return *this;
     }
+    ~PhoneBook(){}
 };
+
+#endif
