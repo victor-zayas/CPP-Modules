@@ -36,7 +36,6 @@ public:
 
     ~Contact(){}
 
-    Contact(std::string name, std::string last_name, std::string nickname, std::string phone_number, std::string dark_secret);
     void setName(std::string name);
     void setLastName(std::string last_name);
     void setNickname(std::string nickname);

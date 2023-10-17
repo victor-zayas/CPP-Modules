@@ -1,14 +1,6 @@
 
 #include"contact.hpp"
 
-Contact::Contact(std::string name, std::string last_name, std::string nickname, std::string phone_number, std::string dark_secret) {
-	_name = name;
-	_last_name = last_name;
-	_nickname = nickname;
-    _phone_number = phone_number;
-	_darkest_secret = dark_secret;
-}
-
 void Contact::setName(std::string name) {
 	_name = name;
 }

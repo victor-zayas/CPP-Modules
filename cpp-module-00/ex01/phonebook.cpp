@@ -1,61 +1,51 @@
 
 #include"phonebook.hpp"
 
-
 void	PhoneBook::createContact(int &i) {
+	// if contact full, replace the first one
+	if (i == 8)
+		i = 0;
 	if (i < 8) {
-		// Console messagge
-		std::cout << "Insert: Name, last name, nickname, phone number, a dark secret" << std::endl;
-		// Prompt
 		std::string name, lastName, nickName, phoneNumber, darkSecret;
-		// Store info
+		std::cout << "Please enter the following information" << "\n";
 		std::cout << "Name: " << "\n";
 		std::cin >> name;
+		PhoneBook::contacts[i].setName(name);
 		std::cout << "Last name: " << "\n";
 		std::cin >> lastName;
+		PhoneBook::contacts[i].setLastName(lastName);
 		std::cout << "Nickname: " << "\n";
 		std::cin >> nickName;
+		PhoneBook::contacts[i].setNickname(nickName);
 		std::cout << "Phone number: " << "\n";
 		std::cin >> phoneNumber;
+		PhoneBook::contacts[i].setPhoneNumber(phoneNumber);
 		std::cout << "A dark secret: " << "\n";
 		std::cin >> darkSecret;
-
-		// ADD CONTACT
-		this->contacts[i] = Contact(name, lastName, nickName, phoneNumber, darkSecret);
+		PhoneBook::contacts[i].setDarkSecret(darkSecret);
+		std::cout << "Contact created" << "\n";
 		i++;
-	}
-	else {
-		// Console messagge
-		std::cout << "Insert: Name, last name, nickname, phone number, a dark secret" << std::endl;
-
-		// Prompt received
-		std::string name, lastName, nickName, phoneNumber, darkSecret;
-		std::cin >> name >> lastName >> nickName >> phoneNumber >> darkSecret;
-
-		// Replace the 9th contact for the first one
-		this->contacts[0] = Contact(name, lastName, nickName, phoneNumber, darkSecret);
 	}
 }
 
 void	PhoneBook::searchContact(int &i) {
 	if (i > 0) {
-		int	search = 0;
+		int	index = 0;
 
-		// Select index contact
 		std::cout << "Enter the index of the contact (0 to 7):" << std::endl;
-		std::cin >> search;
+		std::cin >> index;
 
-		if (search >= 0 && search < i) {
-			// Show contact index
-			std::cout << "Name: " << contacts[search].getName() << std::endl;
-			std::cout << "Last name: " << contacts[search].getLastName() << std::endl;
-			std::cout << "Nickname: " << contacts[search].getNickName() << std::endl;
-			std::cout << "Phone_number: " << contacts[search].getPhoneNumber() << std::endl;
-			std::cout << "Dark secret: " << contacts[search].getDarkSecret() << std::endl;
+		if (index >= 0 && index < i) {
+			std::cout << "Contact info" << std::endl;
+			std::cout << "Name: " << contacts[index].getName() << std::endl;
+			std::cout << "Last name: " << contacts[index].getLastName() << std::endl;
+			std::cout << "Nickname: " << contacts[index].getNickName() << std::endl;
+			std::cout << "Phone_number: " << contacts[index].getPhoneNumber() << std::endl;
+			std::cout << "Dark secret: " << contacts[index].getDarkSecret() << std::endl;
 		}
 		else
-			std::cout << "Invalid contact" << std::endl;
+			std::cout << "Invalid index" << std::endl;
 	}
 	else
-		std::cout << "There is no contacts" << std::endl;
+		std::cout << "Phonbook is empty" << std::endl;
 }
