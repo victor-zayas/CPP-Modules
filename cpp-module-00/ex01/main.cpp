@@ -9,16 +9,17 @@ int	main(int argc, char **argv) {
 
 	if (argc != 1)
 		return (std::cout << "ERROR" << std::endl, 1);
-	while (1)
-	{
-		std::cout << "Select and action: ADD, SEARCH, EXIT" << std::endl;
-		std::cin >> select;
 
+	do {
+		std::cout << "Select and action: ADD, SEARCH, EXIT" << std::endl;	
+		std::cin >> select;
 		if (select == "ADD") {
-			myGuide.createContact(i);
+			myGuide.createContact();
+			std::cout << "Press enter\n";
 		}
 		else if (select == "SEARCH") {
-			myGuide.searchContact(i);
+			myGuide.searchContact();
+			std::cout << "Press enter\n";
 		}
 		else if (select == "EXIT") {
 			exit(0);
@@ -27,4 +28,5 @@ int	main(int argc, char **argv) {
 			std::cout << "Invalid command" << std::endl;
 		}
 	}
+	while (std::getline(std::cin, select));
 }

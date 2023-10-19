@@ -3,7 +3,7 @@
 #define PHONEBOOK_HPP
 
 #include <iostream>
-#include <sstream>
+#include <iomanip>
 #include "contact.hpp"
 
 class PhoneBook {
@@ -30,8 +30,8 @@ public:
     }
     ~PhoneBook(){}
 
-    void    createContact(int &i);
-    void	searchContact(int &i);
+    void    createContact(void);
+    void	searchContact(void);
 };
 
 #endif
