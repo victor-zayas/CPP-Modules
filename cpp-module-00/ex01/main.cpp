@@ -11,7 +11,7 @@ int	main(int argc, char **argv) {
 		return (std::cout << "ERROR" << std::endl, 1);
 
 	do {
-		std::cout << "Select and action: ADD, SEARCH, EXIT" << std::endl;	
+		std::cout << "Select and action: ADD, SEARCH, EXIT" << std::endl;
 		std::cin >> select;
 		if (select == "ADD") {
 			myGuide.createContact();
