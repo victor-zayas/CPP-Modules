@@ -21,6 +21,11 @@ void	PhoneBook::createContact(void) {
 		PhoneBook::contacts[i].setNickname(nickName);
 		std::cout << "Phone number: ";
 		std::cin >> phoneNumber;
+		int c = 0;
+		while (phoneNumber.length() < 9 ) {
+			if (!isnumber(phoneNumber[c++]))
+				printf("Error\n invalid phone number\n");
+		}
 		PhoneBook::contacts[i].setPhoneNumber(phoneNumber);
 		std::cout << "A dark secret: ";
 		std::cin.ignore();

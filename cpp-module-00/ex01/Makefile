@@ -1,9 +1,8 @@
 
 NAME = phonebook
 
-CXX = g++
-FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic -fsanitize=address -g3
-RM = /bin/rm -f
+CXX = clang++
+FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic
 
 # ASCII COLORS #
 RED=\033[0;31m
