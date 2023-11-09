@@ -6,16 +6,14 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/27 11:11:49 by vzayas-s          #+#    #+#              #
-#    Updated: 2023/10/27 11:12:48 by vzayas-s         ###   ########.fr        #
+#    Updated: 2023/11/09 12:32:29 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME = account
 
-CXX = g++
-FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic -fsanitize=address -g3
-RM = /bin/rm -f
+CXX = clang++
+FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic
 
 # ASCII COLORS #
 RED=\033[0;31m
@@ -24,7 +22,7 @@ BLUE=\033[0;34m
 END=\033[0m
 
 SRCS =	Account.cpp		\
-		test.cpp		\
+		tests.cpp		\
 
 OBJS = $(SRCS:.cpp=.o)
 
