@@ -10,11 +10,14 @@ int	main(void) {
 	// puntero a newZombie
 	Zombie *pepeZombie = zombie.newZombie("pepe");
 
-	// zombie horde
-	Zombie *horde = zombie.zombieHorde(5, "illo");
-
 	// randomChump
 	zombie.randomChump("juan");
 
+	std::cout << "OH NO! A ZOMBIE HORDE APPROACH" << std::endl;
+	Zombie *zombieHorde = zombie.zombieHorde(5, "Mike");
+
+	// use delete if you create newZombie in heap
 	delete pepeZombie;
+	// use delete in each zombie of horde
+	delete[] zombieHorde;
 }

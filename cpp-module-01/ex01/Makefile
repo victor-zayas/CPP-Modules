@@ -25,6 +25,7 @@ SRCS =	main.cpp		\
 		zombie.cpp		\
 		newZombie.cpp	\
 		randomChump.cpp	\
+		zombieHorde.cpp	\
 
 OBJS = $(SRCS:.cpp=.o)
 

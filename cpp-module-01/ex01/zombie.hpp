@@ -12,31 +12,17 @@ private:
 
 public:
 
-	Zombie() : _name("") {
-		std::cout << "zombie created" << std::endl;
-	}
-
-    Zombie(const Zombie &copy) {
-        _name = copy._name;
-    }
-
-    Zombie &operator=(const Zombie &other) {
-        if (this != &other) {
-        _name = other._name;
-        }
-        return *this;
-    }
-
-    ~Zombie() {
-		std::cout << "Zombie explodes" << std::endl;
-	}
+	Zombie();
+    Zombie(const Zombie &copy);
+    Zombie &operator=(const Zombie &other);
+    ~Zombie();
 
 	void	setName(std::string name);
 	std::string	getName();
 
 	Zombie	*newZombie(std::string name);
-	Zombie	*zombieHorde(int n, std::string name);
 	void	randomChump(std::string name);
+	Zombie *zombieHorde(int n, std::string name);
 
 };
 

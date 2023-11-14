@@ -12,22 +12,10 @@ private:
 
 public:
 
-	Zombie() : _name("") {}
-
-    Zombie(const Zombie &copy) {
-        _name = copy._name;
-    }
-
-    Zombie &operator=(const Zombie &other) {
-        if (this != &other) {
-        _name = other._name;
-        }
-        return *this;
-    }
-
-    ~Zombie() {
-		std::cout << "Zombie: " << getName() << " explodes" << std::endl;
-	}
+	Zombie();
+    Zombie(const Zombie &copy);
+    Zombie &operator=(const Zombie &other);
+    ~Zombie();
 
 	void	setName(std::string name);
 	std::string	getName();

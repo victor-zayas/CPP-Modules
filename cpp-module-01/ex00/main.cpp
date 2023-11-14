@@ -8,10 +8,13 @@ int	main(void) {
 	std::cout << "the whole world is mutating..." << std::endl;
 	
 	// puntero a newZombie
-	Zombie *pepeZombie = zombie.newZombie("pepe");
+	// Zombie *pepeZombie = zombie.newZombie("pepe");
 
+	// newZombie
+	zombie.newZombie("pepe");
 	// randomChump
 	zombie.randomChump("juan");
 
-	delete pepeZombie;
+	// use delete if you create newZombie in heap
+	// delete pepeZombie;
 }
