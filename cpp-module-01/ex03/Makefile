@@ -10,10 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = string
+NAME = battle
 
 CXX = clang++
-FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic
+FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic -fsanitize=address -g3
 
 # ASCII COLORS #
 RED=\033[0;31m

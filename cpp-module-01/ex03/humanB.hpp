@@ -3,16 +3,18 @@
 #define HUMANB_HPP
 
 #include <iostream>
+#include <cstring>
 #include "weapon.hpp"
 
 class HumanB {
     private:
         std::string _name;
-        Weapon weapon;
+        Weapon *weapon;
 
     public:
-        HumanB(const std::string name);
-        HumanB(const std::string &copy);
+        // HumanB();
+        HumanB(std::string name);
+        HumanB(const HumanB &copy);
         HumanB &operator=(const HumanB &other);
         ~HumanB();
 

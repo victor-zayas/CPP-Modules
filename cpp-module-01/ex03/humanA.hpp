@@ -3,6 +3,7 @@
 #define HUMANA_HPP
 
 #include <iostream>
+#include <cstring>
 #include "weapon.hpp"
 
 class HumanA {
@@ -11,8 +12,9 @@ class HumanA {
         Weapon weapon;
 
     public:
-        HumanA(const std::string name, const Weapon weapon);
-        HumanA(const std::string &copy);
+        // HumanA();
+        HumanA(std::string name, const Weapon &weapon);
+        HumanA(const HumanA &copy);
         HumanA &operator=(const HumanA &other);
         ~HumanA();
 

@@ -1,12 +1,11 @@
 
 #include "humanA.hpp"
 
-HumanA::HumanA(const std::string name, const Weapon weapon): _name(name), weapon(weapon) {}
+// HumanA::HumanA(): _name("name"), weapon("default") {}
 
-HumanA::HumanA(const HumanA &copy) {
-    _name = copy._name;
-    weapon = copy.weapon;
-}
+HumanA::HumanA(std::string name, const Weapon &weapon): _name(name), weapon(weapon) {}
+
+HumanA::HumanA(const HumanA &copy): _name(copy._name), weapon(copy.weapon) {}
 
 HumanA  &HumanA::operator=(const HumanA &other) {
     if (this != &other) {

@@ -1,7 +1,11 @@
 
 #include "humanB.hpp"
 
-HumanB::HumanB(const std::string name): _name(name), weapon("") {}
+// HumanB::HumanB(): _name("name"), weapon() {}
+
+HumanB::HumanB(std::string name): _name(name){
+    this->weapon = new Weapon("default");
+}
 
 HumanB::HumanB(const HumanB &copy) {
     _name = copy._name;
@@ -16,14 +20,16 @@ HumanB  &HumanB::operator=(const HumanB &other) {
     return *this;
 }
 
-HumanB::~HumanB() {}
+HumanB::~HumanB() {
+    delete this->weapon;
+}
 
 void    HumanB::setName(std::string name) {
     this->_name = name;
 }
 
 void    HumanB::setWeapon(std::string weapon) {
-    this->weapon = weapon;
+    this->weapon->setType(weapon);
 }
 
 const   std::string HumanB::getName() {
@@ -31,5 +37,6 @@ const   std::string HumanB::getName() {
 }
 
 void    HumanB::attack() {
-    std::cout << getName() << " attacks with their " << weapon.getType() << std::endl;
+    if (this->weapon)
+        std::cout << getName() << " attacks with their " << weapon->getType() << std::endl;
 }
