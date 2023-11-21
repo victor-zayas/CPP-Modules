@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-class   Contact{
+class   Contact {
 private:
     std::string _name;
     std::string _last_name;

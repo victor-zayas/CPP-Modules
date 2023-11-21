@@ -2,9 +2,9 @@
 #include"phonebook.hpp"
 
 PhoneBook::PhoneBook() {
-    for(int i = 0; i < 8; i++){
-        contacts[i] = Contact();
-    }
+//    for(int i = 0; i < 8; i++){
+//        contacts[i] = Contact();
+//    }
 }
 
 PhoneBook::PhoneBook(const PhoneBook &copy) {
