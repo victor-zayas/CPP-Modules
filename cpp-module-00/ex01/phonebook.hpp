@@ -4,33 +4,19 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 #include "contact.hpp"
 
 class PhoneBook {
 public:
     Contact contacts[8];
 
-    PhoneBook() {
-        for(int i = 0; i < 8; i++){
-            contacts[i] = Contact();
-        }
-    }
-    PhoneBook(const PhoneBook &copy) {
-        for (int i = 0; i < 8; i++) {
-            contacts[i] = copy.contacts[i];
-        }
-    }
-    PhoneBook &operator=(const PhoneBook &other){
-        if (this != &other){
-            for (int i = 0; i < 8; i++) {
-                contacts[i] = other.contacts[i];
-            }
-        }
-        return *this;
-    }
-    ~PhoneBook(){}
+    PhoneBook();
+    PhoneBook(const PhoneBook &copy);
+    PhoneBook &operator=(const PhoneBook &other);
+    ~PhoneBook();
 
-    void    createContact(void);
+    void    createContact(int &i);
     void	searchContact(void);
 };
 

@@ -1,9 +1,30 @@
 
 #include"phonebook.hpp"
 
-void	PhoneBook::createContact(void) {
+PhoneBook::PhoneBook() {
+    for(int i = 0; i < 8; i++){
+        contacts[i] = Contact();
+    }
+}
 
-	int i = 0;
+PhoneBook::PhoneBook(const PhoneBook &copy) {
+    for (int i = 0; i < 8; i++) {
+        contacts[i] = copy.contacts[i];
+    }
+}
+
+PhoneBook &PhoneBook::operator=(const PhoneBook &other){
+    if (this != &other){
+        for (int i = 0; i < 8; i++) {
+            contacts[i] = other.contacts[i];
+        }
+    }
+    return *this;
+}
+
+PhoneBook::~PhoneBook() {}
+
+void	PhoneBook::createContact(int &i) {
 
 	if (i == 8)
 		i = 0;
@@ -22,9 +43,14 @@ void	PhoneBook::createContact(void) {
 		std::cout << "Phone number: ";
 		std::cin >> phoneNumber;
 		int c = 0;
-		while (phoneNumber.length() < 9 ) {
-			if (!isnumber(phoneNumber[c++]))
-				printf("Error\n invalid phone number\n");
+        // add rule to prevent open empty contact
+		while (phoneNumber.length() < 9) {
+			if (!isnumber(phoneNumber[c])) {
+                std::cout << "Error: invalid phone number, try again:";
+                std::cin >> phoneNumber;
+                c = 0;
+            }
+            c++;
 		}
 		PhoneBook::contacts[i].setPhoneNumber(phoneNumber);
 		std::cout << "A dark secret: ";
@@ -39,7 +65,7 @@ void	PhoneBook::createContact(void) {
 void	PhoneBook::searchContact(void) {
 
 	if (contacts[0].getName().length() == 0) {
-		std::cout << "Phonbook is empty" << std::endl;
+		std::cout << "Phonebook is empty" << std::endl;
 		return ;
 	}
 
@@ -66,7 +92,11 @@ void	PhoneBook::searchContact(void) {
 		if (select.length() > 1 || !isnumber(select[0]))
 			std::cout << "Not valid index" << std::endl;
 		else {
-			int id = stoi(select);
+			int id = atoi(select.c_str());
+            if (contacts[id].getName().length() == 0) {
+                std::cout << "Empty contact" << std::endl;
+                return;
+            }
 			std::cout << "> FIRST NAME : " << contacts[id].getName() << std::endl;
 			std::cout << "> LAST NAME : " << contacts[id].getLastName() << std::endl;
 			std::cout << "> NICKNAME : " << contacts[id].getNickName() << std::endl;

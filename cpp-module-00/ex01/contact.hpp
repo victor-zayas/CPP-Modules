@@ -13,28 +13,10 @@ private:
     std::string _darkest_secret;
 
 public:
-    Contact() : _name(""), _last_name(""), _nickname(""), _phone_number(""), _darkest_secret("") {}
-
-    Contact(const Contact &copy) {
-        _name = copy._name;
-        _last_name = copy._last_name;
-        _nickname = copy._nickname;
-        _phone_number = copy._phone_number;
-        _darkest_secret = copy._darkest_secret;
-    }
-
-    Contact &operator=(const Contact &other) {
-        if (this != &other) {
-        _name = other._name;
-        _last_name = other._last_name;
-        _nickname = other._nickname;
-        _phone_number = other._phone_number;
-        _darkest_secret = other._darkest_secret;
-        }
-        return *this;
-    }
-
-    ~Contact(){}
+    Contact();
+    Contact(const Contact &copy);
+    Contact &operator=(const Contact &other);
+    ~Contact();
 
     void setName(std::string name);
     void setLastName(std::string last_name);
