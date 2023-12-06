@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = string
+NAME = brain
 
 CXX = clang++
 FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic

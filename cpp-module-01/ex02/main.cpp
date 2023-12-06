@@ -9,13 +9,13 @@ int main(void) {
     // reference
     std::string &ref = brain;
 
-    std::cout << "Memory address" << std::endl;
+    std::cout << "<----Memory address---->" << std::endl;
 
     std::cout << "String: " << &brain << std::endl;
     std::cout << "Pointer: " << ptr << std::endl;
     std::cout << "Reference: " << &ref << std::endl;
 
-    std::cout << "Content" << std::endl;
+    std::cout << "<----Content---->" << std::endl;
 
     std::cout << "String: " << brain << std::endl;
     std::cout << "Pointer: " << *ptr << std::endl;

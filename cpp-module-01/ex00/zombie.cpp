@@ -15,7 +15,7 @@ Zombie &Zombie::operator=(const Zombie &other) {
 }
 
 Zombie::~Zombie() {
-	std::cout << "zombie explodes from starvation" << std::endl;
+	std::cout << "zombie decay" << std::endl;
 }
 
 void	Zombie::setName(std::string name) {
