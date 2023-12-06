@@ -50,6 +50,7 @@ void	PhoneBook::createContact(int &i) {
 		}
 		PhoneBook::contacts[i].setPhoneNumber(phoneNumber);
 		std::cout << "A dark secret: ";
+		std::cin.ignore();
 		std::getline(std::cin, darkSecret);
 		PhoneBook::contacts[i].setDarkSecret(darkSecret);
 		std::cout << "Contact created" << std::endl;
