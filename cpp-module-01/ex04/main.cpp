@@ -30,15 +30,16 @@ void replace(const std::string file, const std::string s1, const std::string s2)
 		std::cerr << "Error: couldn't create file: " << file << std::endl;
 		return ;
 	}
-	std::string line;
-	while(std::getline(input, line)) {
-		size_t poss = 0;
-		while ((poss = line.find(s1, poss)) != std::string::npos) {
-			line.replace(poss, s1.length(), s2);
-			poss += s2.length();
-		}
-		output << line << std::endl;
-	}
+    std::string line;
+    while (std::getline(input, line)) {
+        int pos = line.find(s1);
+        while (pos != std::string::npos) {
+            output << line.substr(0, pos) << s2;
+            line = line.substr(pos + s1.length());
+            pos = line.find(s1);
+        }
+        output << line << std::endl;
+    }
 	input.close();
 	output.close();
 	std::cout << "Replacement completed " << file + ".replace" << std::endl;

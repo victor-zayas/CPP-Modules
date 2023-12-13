@@ -108,7 +108,7 @@ void	PhoneBook::searchContact(void) {
 	std::string select;
     int nb;
     std::cout << "Enter the index of the contact" << std::endl;
-    std::cin >> select;
+    std::getline(std::cin, select);
     nb = select[0] - '0';
     if (nb < 0 || nb > 7)
         std::cout << "Not valid index" << std::endl;

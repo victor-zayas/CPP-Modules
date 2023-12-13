@@ -12,13 +12,13 @@ int	main(int argc, char **argv) {
 	while (1) {
 		std::cout << "Select and action: ADD, SEARCH, EXIT" << std::endl;
         std::getline(std::cin, select);
-        if (select == "ADD") {
+        if (!select.compare("ADD")) {
 			myGuide.createContact(i);
 		}
-		else if (select == "SEARCH") {
+		if (!select.compare("SEARCH")) {
             myGuide.searchContact();
 		}
-		else if (select == "EXIT") {
+		if (!select.compare("EXIT")) {
 			exit(0);
 		}
 	}
