@@ -9,11 +9,11 @@
 class HumanA {
     private:
         std::string _name;
-        Weapon weapon;
+        Weapon &weapon;
 
     public:
         // HumanA();
-        HumanA(std::string name, const Weapon &weapon);
+        HumanA(std::string name, Weapon &weapon);
         HumanA(const HumanA &copy);
         HumanA &operator=(const HumanA &other);
         ~HumanA();

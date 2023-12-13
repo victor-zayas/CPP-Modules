@@ -3,7 +3,7 @@
 
 // HumanA::HumanA(): _name("name"), weapon("default") {}
 
-HumanA::HumanA(std::string name, const Weapon &weapon): _name(name), weapon(weapon) {}
+HumanA::HumanA(std::string name, Weapon &weapon): _name(name), weapon(weapon) {}
 
 HumanA::HumanA(const HumanA &copy): _name(copy._name), weapon(copy.weapon) {}
 

@@ -3,9 +3,7 @@
 
 // HumanB::HumanB(): _name("name"), weapon() {}
 
-HumanB::HumanB(std::string name): _name(name){
-    this->weapon = new Weapon("default");
-}
+HumanB::HumanB(std::string name): _name(name){}
 
 HumanB::HumanB(const HumanB &copy) {
     _name = copy._name;
@@ -20,16 +18,14 @@ HumanB  &HumanB::operator=(const HumanB &other) {
     return *this;
 }
 
-HumanB::~HumanB() {
-    delete this->weapon;
-}
+HumanB::~HumanB() {}
 
 void    HumanB::setName(std::string name) {
     this->_name = name;
 }
 
-void    HumanB::setWeapon(std::string weapon) {
-    this->weapon->setType(weapon);
+void    HumanB::setWeapon(Weapon &newWeapon) {
+    this->weapon = &newWeapon;
 }
 
 const   std::string HumanB::getName() {

@@ -13,7 +13,7 @@
 NAME = battle
 
 CXX = clang++
-FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic -fsanitize=address -g3
+FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic -g3 #-fsanitize=address
 
 # ASCII COLORS #
 RED=\033[0;31m

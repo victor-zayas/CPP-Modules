@@ -12,7 +12,6 @@ class HumanB {
         Weapon *weapon;
 
     public:
-        // HumanB();
         HumanB(std::string name);
         HumanB(const HumanB &copy);
         HumanB &operator=(const HumanB &other);
@@ -21,7 +20,7 @@ class HumanB {
         void    setName(std::string);
         const std::string getName();
 
-        void    setWeapon(const std::string weapon);
+        void    setWeapon(Weapon &newWeapon);
         void    attack();
 
 };
