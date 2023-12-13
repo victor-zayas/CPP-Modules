@@ -20,7 +20,6 @@ void	Harl::error(void) {
 void	Harl::complain(std::string level) {
 	std::string	complainlvl[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int i = -1;
-	// void	(Harl::*harlcomplain[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	while(++i < 4) {
 		if (level == complainlvl[i])

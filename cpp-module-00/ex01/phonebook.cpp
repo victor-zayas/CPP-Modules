@@ -29,17 +29,34 @@ void	PhoneBook::createContact(int &i) {
 		std::cout << "Please enter the following information" << "\n";
 		std::cout << "Name: ";
 		std::getline(std::cin, name);
+        if (name.empty() || (name.size() == 1 && name[0] == '\n')) {
+            while (name.empty()) {
+            std::cout << "Empty line, try again:";
+            std::getline(std::cin, name);
+            }
+        }
 		PhoneBook::contacts[i].setName(name);
 		std::cout << "Last name: ";
         std::getline(std::cin, lastName);
+        if (lastName.empty() || (lastName.size() == 1 && lastName[0] == '\n')) {
+            while (lastName.empty()) {
+                std::cout << "Empty line, try again:";
+                std::getline(std::cin, lastName);
+            }
+        }
 		PhoneBook::contacts[i].setLastName(lastName);
 		std::cout << "Nickname: " ;
         std::getline(std::cin, nickName);
+        if (nickName.empty() || (nickName.size() == 1 && nickName[0] == '\n')) {
+            while (nickName.empty()) {
+                std::cout << "Empty line, try again:";
+                std::getline(std::cin, nickName);
+            }
+        }
 		PhoneBook::contacts[i].setNickname(nickName);
 		std::cout << "Phone number: ";
         std::getline(std::cin, phoneNumber);
 		int c = 0;
-        // add rule to prevent open empty contact
 		while (phoneNumber.length() < 9) {
 			if (!isnumber(phoneNumber[c])) {
                 std::cout << "Error: invalid phone number, try again:";
@@ -52,6 +69,12 @@ void	PhoneBook::createContact(int &i) {
 		std::cout << "A dark secret: ";
 		std::cin.ignore();
 		std::getline(std::cin, darkSecret);
+        if (darkSecret.empty() || (darkSecret.size() == 1 && darkSecret[0] == '\n')) {
+            while (darkSecret.empty()) {
+                std::cout << "Empty line, try again:";
+                std::getline(std::cin, darkSecret);
+            }
+        }
 		PhoneBook::contacts[i].setDarkSecret(darkSecret);
 		std::cout << "Contact created" << std::endl;
 		i++;

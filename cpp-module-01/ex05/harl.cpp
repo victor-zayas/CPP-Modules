@@ -2,7 +2,7 @@
 #include "harl.hpp"
 
 void	Harl::debug(void) {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
 }
 
 void	Harl::info(void) {
@@ -17,6 +17,19 @@ void	Harl::error(void) {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+int getComplain(const std::string &lvl) {
+    std::string complainLevels[]    = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    for (int i = 0; i < 4; i++)
+        if ( lvl == complainLevels[i])
+            return (i);
+    return (-1);
+}
+
 void	Harl::complain(std::string level) {
-	//TODO: The goal of this exercise is to use pointers to member functions
+    void    (Harl::*complainLvl[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    int     index;
+
+    index = getComplain(level);
+    if (index != -1)
+        (this->*complainLvl[index])();
 }
