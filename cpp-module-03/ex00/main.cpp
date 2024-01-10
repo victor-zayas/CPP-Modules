@@ -8,8 +8,17 @@ int main(void) {
 
     std::cout << std::endl;
     JoaquinJavier.attack("Luis");
-    LuisMiguel.takeDamage(0);
+    LuisMiguel.takeDamage(1);
     LuisMiguel.beRepaired(10);
+    std::cout << std::endl;
+
+    std::cout << "ClapTrap " << JoaquinJavier.getName() << " is hit by P.E.M. grenade and now has "
+    << JoaquinJavier.getHitPoints() << " hit points" << std::endl;
+    JoaquinJavier.takeDamage(5);
+    JoaquinJavier.setEnergyPoints(0);
+    LuisMiguel.attack("Jokin");
+    JoaquinJavier.takeDamage(0);
+    JoaquinJavier.beRepaired(10);
 
     std::cout << std::endl;
     Nameless.attack("Copy");
