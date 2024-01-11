@@ -19,7 +19,7 @@ public:
     ClapTrap &operator=(const ClapTrap &other);
     ~ClapTrap();
 
-    void setEnergyPoints(int amount);
+    void setEnergyPoints(uint amount);
 
     std::string	getName();
     uint	getHitPoints();

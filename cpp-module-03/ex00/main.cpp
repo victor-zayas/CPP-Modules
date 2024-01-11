@@ -12,12 +12,12 @@ int main(void) {
     LuisMiguel.beRepaired(10);
     std::cout << std::endl;
 
-    std::cout << "ClapTrap " << JoaquinJavier.getName() << " is hit by P.E.M. grenade and now has "
-    << JoaquinJavier.getHitPoints() << " hit points" << std::endl;
+    std::cout << "ClapTrap " << JoaquinJavier.getName() << " is hit by P.E.M. grenade" << std::endl;
     JoaquinJavier.takeDamage(5);
     JoaquinJavier.setEnergyPoints(0);
     LuisMiguel.attack("Jokin");
     JoaquinJavier.takeDamage(0);
+    JoaquinJavier.attack("Luis");
     JoaquinJavier.beRepaired(10);
 
     std::cout << std::endl;
