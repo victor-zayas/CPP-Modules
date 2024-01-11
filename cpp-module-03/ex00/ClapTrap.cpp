@@ -33,6 +33,11 @@ void ClapTrap::setEnergyPoints(uint amount) {
     std::cout << "ClapTrap " << this->getName() << " has " << this->getEnergyPoints() << " energy points" << std::endl;
 }
 
+void ClapTrap::setHitPoints(uint amount) {
+    this->_hitPoints = amount;
+    std::cout << "ClapTrap " << this->getName() << " has " << this->getEnergyPoints() << " hit points" << std::endl;
+}
+
 std::string ClapTrap::getName() {
     return this->_name;
 }
@@ -84,7 +89,11 @@ void    ClapTrap::beRepaired(unsigned int amount) {
             std::cout << "ClapTrap " << this->getName() << " have all hit points" << std::endl;
             return ;
         }
-        else
+        else if ((this->_hitPoints + amount) >= 10) {
+			this->setHitPoints(10);
+			std::cout << "ClapTrap " << this->getName() << " repair " << (this->_hitPoints + amount) - 10 << " hit points" << std::endl;
+		}
+		else
             std::cout << "ClapTrap " << this->getName() << " repair " << this->_hitPoints + amount
             << " hit points" << std::endl;
     }

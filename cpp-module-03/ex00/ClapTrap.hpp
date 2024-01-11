@@ -20,6 +20,7 @@ public:
     ~ClapTrap();
 
     void setEnergyPoints(uint amount);
+    void setHitPoints(uint amount);
 
     std::string	getName();
     uint	getHitPoints();
