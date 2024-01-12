@@ -5,10 +5,11 @@ int main(void) {
     ScavTrap    ManuelFerran("Manu");
 
     std::cout << std::endl;
-    JoaquinJavier.attack("Luis");
+    JoaquinJavier.attack("Manu");
     ManuelFerran.takeDamage(0);
     ManuelFerran.guardGate();
-    std::cout << "ScavTrap" << ManuelFerran.getName() << " is now very angry" << std::endl;
+    std::cout << "ScavTrap " << ManuelFerran.getName() << " is now very angry" << std::endl;
+    ManuelFerran.attack("Jokin");
+    JoaquinJavier.takeDamage(20);
     std::cout << std::endl;
 }
-

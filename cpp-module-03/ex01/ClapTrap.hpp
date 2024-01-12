@@ -24,10 +24,10 @@ public:
     void	setHitPoints(uint amount);
     void	setAttackDamage(uint amount);
 
-    std::string	getName();
-    uint	getHitPoints();
-    uint	getEnergyPoints();
-    uint	getAttackDamage();
+    std::string	getName() const;
+    uint	getHitPoints() const;
+    uint	getEnergyPoints() const;
+    uint	getAttackDamage() const;
 
     void    attack(const std::string &target);
     void    takeDamage(unsigned int amount);
