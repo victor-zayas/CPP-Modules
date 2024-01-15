@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = Polymorphism
 
 CXX = clang++
 FLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic
@@ -10,7 +10,9 @@ BLUE=\033[0;34m
 END=\033[0m
 
 SRCS =	main.cpp	\
-		ClapTrap.cpp	\
+		Animal.cpp	\
+		Dog.cpp		\
+		Cat.cpp		\
 
 OBJS = $(SRCS:.cpp=.o)
 
