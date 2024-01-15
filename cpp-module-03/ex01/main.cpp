@@ -12,4 +12,6 @@ int main(void) {
     ManuelFerran.attack("Jokin");
     JoaquinJavier.takeDamage(20);
     std::cout << std::endl;
+
+    // ScavTrap    paco("paco");
 }

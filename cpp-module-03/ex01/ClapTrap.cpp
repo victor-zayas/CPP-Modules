@@ -41,7 +41,7 @@ void    ClapTrap::setHitPoints(uint amount) {
 }
 
 void    ClapTrap::setAttackDamage(uint amount) {
-    this->_hitPoints = amount;
+    this->_attackDamage = amount;
 }
 
 std::string ClapTrap::getName() const {
@@ -80,6 +80,7 @@ void    ClapTrap::takeDamage(unsigned int amount) {
         this->_hitPoints -= amount;
     }
 }
+
 void    ClapTrap::beRepaired(unsigned int amount) {
     std::cout << "ClapTrap " << this->getName() << " have " << this->_energyPoints
         << " energy points" << std::endl;

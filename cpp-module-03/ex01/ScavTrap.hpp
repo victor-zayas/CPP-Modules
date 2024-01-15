@@ -1,7 +1,6 @@
 # ifndef SCAVTRAV_HPP
 # define SCAVTRAV_HPP
 
-#include<iostream>
 #include"ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap

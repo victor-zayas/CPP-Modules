@@ -8,12 +8,15 @@ ScavTrap::ScavTrap() {
 	std::cout << "Default ScavTrap created" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
-    //this->setName(name);
+ScavTrap::ScavTrap(std::string name) {
+    this->setName(name);
     this->setHitPoints(100);
     this->setEnergyPoints(50);
     this->setAttackDamage(20);
     std::cout << "ScavTrap " << this->getName() << " created" << std::endl;
+    std::cout << "ScavTrap " << this->getHitPoints() << " hit points" << std::endl;
+    std::cout << "ScavTrap " << this->getEnergyPoints() << " energy" << std::endl;
+    std::cout << "ScavTrap " << this->getAttackDamage() << " attack" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy) {
