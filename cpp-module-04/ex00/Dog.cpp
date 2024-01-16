@@ -2,7 +2,7 @@
 
 Dog::Dog() {
     this->_type = "Default";
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Dog Default constructor called" << std::endl;
 }
 
 Dog::Dog(std::string name) {
@@ -12,14 +12,14 @@ Dog::Dog(std::string name) {
 
 Dog::Dog(const Dog &copy) {
     this->_type = copy._type;
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog  &Dog::operator=(const Dog &other) {
     if (this != &other) {
         this->_type = other._type;
     }
-    std::cout << "Operator constructor called" << std::endl;
+    std::cout << "Dog operator constructor called" << std::endl;
     return *this;
 }
 
