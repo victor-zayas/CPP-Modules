@@ -27,27 +27,27 @@ public:
     bool    operator!=(const Fixed &other) const;
 
     // arithmetic operators
-    Fixed   &operator-(const Fixed &other);
-    Fixed   &operator+(const Fixed &other);
-    Fixed   &operator*(const Fixed &other);
-    Fixed   &operator/(const Fixed &other);
+    Fixed   operator-(const Fixed &other);
+    Fixed   operator+(const Fixed &other);
+    Fixed   operator*(const Fixed &other);
+    Fixed   operator/(const Fixed &other);
 
     // increment/decrement operators
-    Fixed   &operator++();
-    Fixed   &operator++(int);
-    Fixed   &operator--();
-    Fixed   &operator--(int);
+    Fixed   operator++();
+    Fixed   operator++(int);
+    Fixed   operator--();
+    Fixed   operator--(int);
 
-    static  Fixed&  min(Fixed& a, Fixed& b);
-    static const  Fixed&  min(const Fixed& a, const Fixed& b);
-    static  Fixed&  max(Fixed& a, Fixed& b);
-    static const  Fixed&  max(const Fixed& a, const Fixed& b);
+    static  Fixed   &min(Fixed &a, Fixed &b);
+    static  Fixed   &min(const Fixed &a, const Fixed &b);
+    static  Fixed   &max(Fixed &a, Fixed &b);
+    static  Fixed   &max(const Fixed &a, const Fixed &b);
 
-    int    getRawBits(void) const;
     void   setRawBits(const int raw);
+    int    getRawBits(void) const;
 
-    float toFloat(void) const;
     int toInt(void) const;
+    float toFloat(void) const;
 
 };
 

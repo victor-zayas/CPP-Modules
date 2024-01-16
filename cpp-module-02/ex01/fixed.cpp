@@ -4,17 +4,19 @@ Fixed::Fixed(): _fix(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int num): _fix(num << _bit) {
+Fixed::Fixed(const int num) {
     std::cout << "Int constructor called" << std::endl;
+    setRawBits(roundf(num * (1 << _bit)));
 }
 
-Fixed::Fixed(const float num): _fix(static_cast<int>(num * (1 << _bit))) {
+Fixed::Fixed(const float num) {
     std::cout << "Float constructor called" << std::endl;
+    setRawBits((roundf(num * (1 << _bit))));
 }
 
 Fixed::Fixed(const Fixed &copy) {
-    _fix = copy._fix;
     std::cout << "Copy constructor called" << std::endl;
+    _fix = copy._fix;
 }
 
 Fixed &Fixed::operator=(const Fixed &other) {
@@ -30,11 +32,11 @@ Fixed::~Fixed() {
 }
 
 float Fixed::toFloat() const {
-    return static_cast<float>(_fix) / (1 << _bit);
+    return (roundf(_fix) / (1 << _bit));
 }
 
 int Fixed::toInt() const {
-    return _fix >> _bit;
+    return (_fix / (1 << _bit));
 }
 
 int Fixed::getRawBits() const {

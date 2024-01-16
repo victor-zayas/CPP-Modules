@@ -18,11 +18,11 @@ public:
     Fixed &operator=(const Fixed &other);
     ~Fixed();
 
-    int    getRawBits(void) const;
     void   setRawBits(const int raw);
+    int    getRawBits(void) const;
 
-    float toFloat(void) const;
     int toInt(void) const;
+    float toFloat(void) const;
 
 };
 
