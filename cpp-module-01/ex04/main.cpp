@@ -32,8 +32,8 @@ void replace(const std::string file, const std::string s1, const std::string s2)
 	}
     std::string line;
     while (std::getline(input, line)) {
-        int pos = line.find(s1);
-        while (pos != std::string::npos) {
+        std::string::size_type pos = 0;
+        while ((pos = line.find(s1, pos)) != std::string::npos) {
             output << line.substr(0, pos) << s2;
             line = line.substr(pos + s1.length());
             pos = line.find(s1);

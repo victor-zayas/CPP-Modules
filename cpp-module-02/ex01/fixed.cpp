@@ -1,4 +1,4 @@
-#include "fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed(): _fix(0) {
     std::cout << "Default constructor called" << std::endl;

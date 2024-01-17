@@ -1,5 +1,5 @@
 
-#include"zombie.hpp"
+#include "Zombie.hpp"
 
 Zombie  *zombieHorde(int n, std::string name) {
     Zombie *zombieHorde = new Zombie[n]; // allocate N zombies

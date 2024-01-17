@@ -17,6 +17,10 @@ ScavTrap::ScavTrap(std::string name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy) {
+    this->setName(copy.getName());
+    this->setHitPoints(copy.getHitPoints());
+    this->setEnergyPoints(copy.getEnergyPoints());
+    this->setAttackDamage(copy.getAttackDamage());
     std::cout << "Copy constructor called" << std::endl;
 }
 

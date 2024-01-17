@@ -1,5 +1,5 @@
 
-#include"zombie.hpp"
+#include "Zombie.hpp"
 
 // Create & return a pointer to new zombie and save it on heap
 Zombie	*newZombie(std::string name) {

@@ -14,7 +14,6 @@ int main()
     
 	Tom->makeSound();
 	Spike->makeSound();
-	// Unkwon->makeSound();
     std::cout << std::endl;
 
 	delete Tom;

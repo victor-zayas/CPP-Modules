@@ -1,5 +1,5 @@
 
-#include"contact.hpp"
+#include"Contact.hpp"
 
 Contact::Contact(): _name(""), _last_name(""), _nickname(""), _phone_number(""), _darkest_secret("") {}
 

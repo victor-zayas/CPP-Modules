@@ -16,12 +16,13 @@ DiamondTrap::DiamondTrap(std::string name) {
 	this->setEnergyPoints(ScavTrap::getEnergyPoints());
 	this->setAttackDamage(FragTrap::getAttackDamage());
     std::cout << "DiamondTrap " << this->getName() << " created" << std::endl;
-    std::cout << "DiamondTrap " << this->getHitPoints() << " created" << std::endl;
-    std::cout << "DiamondTrap " << this->getEnergyPoints() << " created" << std::endl;
-    std::cout << "DiamondTrap " << this->getAttackDamage() << " created" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &copy) {
+    this->setName(copy.getName());
+    this->setHitPoints(copy.getHitPoints());
+    this->setEnergyPoints(copy.getEnergyPoints());
+    this->setAttackDamage(copy.getAttackDamage());
     std::cout << "Copy constructor called" << std::endl;
 }
 
@@ -41,8 +42,5 @@ DiamondTrap::~DiamondTrap() {
 }
 
 void    DiamondTrap::whoAmI() {
-    std::cout << "Who am I?" << std::endl;
-    std::cout << this->_name << std::endl;
-    std::cout << "or" << std::endl;
-    std::cout << ClapTrap::getName() << std::endl;
+    std::cout << "Who am I? '" << this->_name << "' or '" << ClapTrap::getName() << "'" << std::endl;
 }

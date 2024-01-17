@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <cstring>
-#include "weapon.hpp"
+#include "Weapon.hpp"
 
 class HumanA {
     private:

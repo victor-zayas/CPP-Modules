@@ -1,7 +1,7 @@
 
-#include "harl.hpp"
+#include "Harl.hpp"
 
-int main(int argc, char **argv) {
+int main(void) {
     Harl	harl;
 
     std::cout << "--- DEBUG LEVEL ---" << std::endl;

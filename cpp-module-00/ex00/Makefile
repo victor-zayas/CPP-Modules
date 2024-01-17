@@ -1,7 +1,7 @@
-
 NAME = megaphone
 
-FLAGS = -Wall -Werror -Wextra -g3 -std=c++98 --pedantic
+CXX = clang++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic
 RM = /bin/rm -f
 
 # ASCII COLORS #
@@ -15,8 +15,12 @@ END=\033[0m
 all: $(NAME)
 
 $(NAME): megaphone.o
-	$(CXX) $(FLAGS) $< -o $@
+	$(CXX) $(CXXFLAGS) $< -o $@
 	echo "$(BLUE)༺ Program compiled༻$(END)"
+
+$(OBJS):%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@echo "$(GREEN)༺ Objects compiled༻$(END)"
 
 megaphone.o: megaphone.cpp
 	$(CXX) $(FLAGS) -c $< -o $@

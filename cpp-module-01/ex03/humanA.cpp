@@ -1,5 +1,5 @@
 
-#include "humanA.hpp"
+#include "HumanA.hpp"
 
 // HumanA::HumanA(): _name("name"), weapon("default") {}
 

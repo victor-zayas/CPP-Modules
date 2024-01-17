@@ -1,5 +1,5 @@
 
-#include"zombie.hpp"
+#include "Zombie.hpp"
 
 Zombie::Zombie(): _name(""){}
 

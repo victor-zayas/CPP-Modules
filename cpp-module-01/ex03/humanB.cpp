@@ -1,5 +1,5 @@
 
-#include "humanB.hpp"
+#include "HumanB.hpp"
 
 // HumanB::HumanB(): _name("name"), weapon() {}
 

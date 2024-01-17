@@ -12,6 +12,10 @@ int main(void) {
     ManuelFerran.takeDamage(0);
     ManuelFerran.guardGate();
     std::cout << "ScavTrap " << ManuelFerran.getName() << " is now very angry" << std::endl;
+    LuisMiguel.attack("Manu");
+    ManuelFerran.takeDamage(30);
+    MariaLuisa.attack("Manu");
+    ManuelFerran.takeDamage(30);
     LuisMiguel.highFivesGuys();
     MariaLuisa.highFivesGuys();
     std::cout << std::endl;

@@ -1,4 +1,4 @@
-NAME = Fixed
+NAME = Spell_cast
 
 CXX = clang++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic
@@ -13,7 +13,7 @@ END=\033[0m
 SRCS =	main.cpp	\
 
 OBJS = $(SRCS:%.cpp=%.o)
-CLASS = Fixed
+CLASS = AMateria ICharacter Cure Ice
 CLASS_SRC = $(CLASS:%=%.cpp)
 CLASS_OBJ = $(CLASS:%=%.o)
 CLASS_HEADER = $(CLASS:%=%.hpp)

@@ -1,5 +1,5 @@
 
-#include "weapon.hpp"
+#include "Weapon.hpp"
 
 Weapon::Weapon(const std::string weaponType): _type(weaponType) {}
 

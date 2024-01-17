@@ -1,6 +1,6 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria() {
+AMateria::AMateria(): _type("Undefined") {
 	std::cout << "AMateria default constructor called" << std::endl;
 }
 
@@ -25,7 +25,7 @@ AMateria::~AMateria() {
 	std::cout << "AMateria destructor called" << std::endl;
 }
 
-void	AMateria::setType(std::string type) const {
+void	AMateria::setType(std::string type) {
 	this->_type = type;
 }
 
@@ -34,9 +34,9 @@ std::string	const	&AMateria::getType() const {
 }
 
 AMateria	*AMateria::clone() const {
-	
+	std::cout << "Matter cloned" << std::endl;
 }
 
 void AMateria::use(ICharacter &target) {
-
+	std::cout << target.getName() << " cast " << this->_type << " spell" << std::endl;
 }
