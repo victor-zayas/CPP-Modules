@@ -4,8 +4,7 @@ Ice::Ice(): _type("Unknown") {
 	std::cout << "Ice default constructor called" << std::endl;
 }
 
-Ice::Ice(std::string type) {
-	this->_type = type;
+Ice::Ice(std::string type): _type("ice") {
 	std::cout << "Ice constructor called" << std::endl;
 }
 
@@ -31,5 +30,9 @@ std::string	Ice::getType() {
 }
 
 void	Ice::use(ICharacter &target) {
-	std::cout << target.getName() << " cast " << this->_type << " spell" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
+AMateria	*Ice::clone() const {
+	return new Ice();
 }

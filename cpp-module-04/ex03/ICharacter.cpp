@@ -16,7 +16,7 @@ ICharacter::ICharacter(std::string name) {
 }
 
 ICharacter::ICharacter(const ICharacter &copy) {
-	this->setName(copy._name);
+	this->_name = copy._name;
 	std::cout << "ICharacter copy constructor called" << std::endl;
 }
 
@@ -38,6 +38,9 @@ std::string	const &ICharacter::getName() const{
 }
 
 void	ICharacter::equip(AMateria *m) {
+	for (int i=0; i < 4; i++) {
+		this->slot[i] = m;
+	}
 	std::cout << "Equip " << m->getType() << " materia" << std::endl;
 }
 

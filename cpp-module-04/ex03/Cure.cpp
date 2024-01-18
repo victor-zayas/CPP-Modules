@@ -4,8 +4,7 @@ Cure::Cure(): _type("Unknown") {
 	std::cout << "Cure default constructor called" << std::endl;
 }
 
-Cure::Cure(std::string type) {
-	this->_type = type;
+Cure::Cure(std::string type): _type("cure") {
 	std::cout << "Cure constructor called" << std::endl;
 }
 
@@ -31,5 +30,9 @@ std::string	Cure::getType() {
 }
 
 void	Cure::use(ICharacter &target) {
-	std::cout << target.getName() << " cast " << this->_type << " spell" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}
+
+AMateria	*Cure::clone() const {
+	return new Cure();
 }

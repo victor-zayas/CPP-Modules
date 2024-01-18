@@ -7,7 +7,7 @@
 class ICharacter {
 private:
 	std::string	_name;
-	std::string	slot[4];
+	AMateria	*slot;
 
 public :
 	ICharacter();
@@ -16,7 +16,6 @@ public :
 	ICharacter &operator=(const ICharacter &other);
 	virtual ~ICharacter();
 
-	void	setName(std::string name);
 	virtual std::string const &getName() const = 0;
 
 	virtual void equip(AMateria *m) = 0;

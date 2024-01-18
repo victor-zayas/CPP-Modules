@@ -19,6 +19,7 @@ public:
 	std::string	getType();
 
 	void	use(ICharacter &target);
+	AMateria	*clone() const;
 };
 
 #endif
