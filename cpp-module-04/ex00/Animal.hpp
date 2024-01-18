@@ -12,7 +12,7 @@ public:
     Animal();
     Animal(const Animal &copy);
     Animal &operator=(const Animal &other);
-    ~Animal();
+    virtual ~Animal();
 
     void    setType(std::string newType);
     std::string getType() const;

@@ -13,7 +13,7 @@ END=\033[0m
 SRCS =	main.cpp	\
 
 OBJS = $(SRCS:%.cpp=%.o)
-CLASS = Animal Cat Dog
+CLASS = Animal Cat Dog WrongAnimal WrongCat
 CLASS_SRC = $(CLASS:%=%.cpp)
 CLASS_OBJ = $(CLASS:%=%.o)
 CLASS_HEADER = $(CLASS:%=%.hpp)
