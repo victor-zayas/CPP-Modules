@@ -31,5 +31,9 @@ Dog::~Dog() {
 }
 
 void    Dog::makeSound() const {
-    std::cout << "Dog barks" << std::endl;
+    std::cout << "barks barks barks barks" << std::endl;
+}
+
+void    Dog::displayIdea(int i) {
+    std::cout << this->_brain->getIdeas(i) << std::endl;
 }

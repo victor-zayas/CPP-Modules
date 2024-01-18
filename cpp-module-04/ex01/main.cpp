@@ -5,13 +5,14 @@ void    subject(void) {
     std::cout << std::endl;
     std::cout << "Subject" << std::endl;
     std::cout << std::endl;
+
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     std::cout << std::endl;
+
     delete j;//should not create a leak
     delete i;
     std::cout << std::endl;
-    return ;
 }
 
 void	fillloop(Animal	*Array[4])
@@ -72,4 +73,11 @@ int main()
 {
     subject();
     mandatory();
+	std::cout << std::endl;
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+	basic.displayIdea(5);
+	std::cout << std::endl;
 }

@@ -2,6 +2,7 @@
 #define CPP_MODULES_BRAIN_H
 
 #include <iostream>
+#include <sstream>
 
 class   Brain {
 private:
@@ -13,7 +14,9 @@ public:
     Brain(const Brain &copy);
     Brain &operator=(const Brain &other);
     ~Brain();
-    
+
+    void    setIdeas(int i, std::string idea);
+    std::string getIdeas(int i);
 };
 
 #endif
