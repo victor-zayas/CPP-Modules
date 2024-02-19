@@ -10,8 +10,7 @@ BLUE=\033[0;34m
 YELLOW=\033[0;33m
 END=\033[0m
 
-SRCS =	main.cpp		\
-		Array.cpp		\
+SRCS =	main.cpp	\
 
 OBJS = $(SRCS:%.cpp=%.o)
 
