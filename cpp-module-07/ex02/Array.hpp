@@ -3,22 +3,6 @@
 
 #include <stdexcept>
 
-/* template<class T>
-class Array {
-private:
-    T   *_elements;
-    unsigned int    _size;
-public:
-    Array();
-    explicit Array(unsigned int n);
-    Array(const Array<T> &copy);
-    Array<T> &operator=(const Array<T> &other);
-    ~Array();
-
-    T   &operator[](unsigned int index);
-    unsigned int size() const;
-}; */
-
 template <class T>
 class Array {
 public:
