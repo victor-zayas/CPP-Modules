@@ -1,11 +1,11 @@
 #include "Span.hpp"
 
-Span::Span(): _size(0), _vector(0) {};
+Span::Span(): _vector(0), _size(0) {}
 
 Span::Span(unsigned int val): _size(val) {
     this->_vector.reserve(this->_size);
     if (this->_size < 1)
-        throw std::range_error("vector is not valid");
+        throw std::runtime_error("vector is not valid");
 }
 
 Span::Span(const Span &copy) {
@@ -33,8 +33,31 @@ const Span	&Span::operator=(const Span &copy) {
 
 Span::~Span() {}
 
-void    Span::addNumber(unsigend int nb) {
+void    Span::addNumber(unsigned int nb) {
     if (this->_vector.size() == _size)
-        throw std::range_error("vector is full");
+        throw std::runtime_error("vector is full");
     this->_vector.push_back(nb);
+}
+
+
+int	Span::shortestSpan(void) const {
+	if (this->_vector.size() <= 1)
+		throw std::runtime_error("cannot find Span");
+	std::vector<int>	copy(this->_vector);
+	std::sort(copy.begin(), copy.end());
+	int span = copy[1] - copy[0];
+	for (unsigned int i = 1; i < copy.size() - 1; i++) {
+		int min = copy[i + 1] - copy[i];
+		if (min < span)
+			span = min;
+	}
+	return span;
+}
+
+int	Span::longestSpan(void) const {
+	if (this->_vector.size() <= 1)
+		throw std::runtime_error("cannot find Span");
+	int min = *std::min_element(_vector.begin(), _vector.end());
+	int max = *std::max_element(_vector.begin(), _vector.end());
+	return max - min;
 }

@@ -1,4 +1,4 @@
-NAME = Span
+NAME = MutantStack
 
 CXX = clang++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic
@@ -11,7 +11,7 @@ YELLOW=\033[0;33m
 END=\033[0m
 
 SRCS =	main.cpp	\
-		Span.cpp	\
+		MutantStack.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
