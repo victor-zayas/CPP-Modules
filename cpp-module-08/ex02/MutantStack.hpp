@@ -1,24 +1,22 @@
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
-
-#include <iostream>
 #include <stack>
-#include <iterator>
 
-template<typename T>
-class MutantStack : public std::stack<T> {
-public:
-	MutantStack<T>();
-	MutantStack<T>(const MutantStack<T> &_copy);
-	~MutantStack<T>();
-	const MutantStack<T> &operator=(const MutantStack<T> &_copy);
+template	<typename T>
+class	MutantStack : public std::stack<T>
+{
+	public:
+		MutantStack(): std::stack<T>() {};
+		MutantStack(const MutantStack& to_copy): std::stack<T>(static_cast<std::stack<T> > (to_copy)) {};
+		MutantStack& operator=(const MutantStack& to_asign) {static_cast<std::stack<T> > (this) = static_cast<std::stack<T> > (to_asign);};
+		~MutantStack() {};
 
-	typedef typename MutantStack<T>::container_type::iterator                   iterator;
-	typedef typename MutantStack<T>::container_type::reverse_iterator           reverse_iterator;
-	iterator                     begin();
-	iterator                     end();
-	reverse_iterator             rbegin();
-	reverse_iterator             rend();
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+		iterator begin() { return std::stack<T>::c.begin();}
+		iterator end() { return std::stack<T>::c.end();}
+		const_iterator begin() const { return std::stack<T>::c.begin();}
+		const_iterator end() const { return std::stack<T>::c.end();}
 };
 
 #endif

@@ -11,7 +11,6 @@ YELLOW=\033[0;33m
 END=\033[0m
 
 SRCS =	main.cpp	\
-		MutantStack.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
