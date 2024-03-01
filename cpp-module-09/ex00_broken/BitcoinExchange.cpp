@@ -7,16 +7,16 @@ BitcoinExchange::BitcoinExchange(std::string file) {
         std::cerr << "Error: invalid .csv file" << std::endl;
     std::string line;
     while (getline(fd, line)) {
-        std::string date = line.substr(0, line.find(','));
+        std::string date = line.substr(0, line.find('|'));
         std::string value = line.substr(line.find(',') + 1);
         if (date == "date")
             continue ;
         if (!checkDate(date, 0) || !isNum(value, 0)) {
             fd.close();
             this->_data.clear();
-            // std::cout << "Error: bad .csv file" << std::endl;
-            // exit(0);
-            throw std::invalid_argument("Error: bad .csv file");
+            std::cout << "Error: bad .csv file" << std::endl;
+            exit(0);
+            // throw std::invalid_argument("Error: bad .csv file");
         }
         double amount = stringToDouble(value);
         this->_data[date] = amount;
@@ -24,9 +24,9 @@ BitcoinExchange::BitcoinExchange(std::string file) {
     if (this->_data.size() == 0) {
         fd.close();
         this->_data.clear();
-        // std::cout << "Error: empty .csv file" << std::endl;
-        // exit(0);
-        throw std::invalid_argument("Error: empty .csv file");
+        std::cout << "Error: empty .csv file" << std::endl;
+        exit(0);
+        // throw std::invalid_argument("Error: empty .csv file");
     }
     fd.close();
 }

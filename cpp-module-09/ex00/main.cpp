@@ -1,9 +1,8 @@
 #include "BitcoinExchange.hpp"
 
-//Error handling
 #define EBADINPUT 1
 
-bool	parse_date(const std::string& line, std::string& date) {
+bool	parse_date(const std::string &line, std::string &date) {
 	if (line.find('|') == std::string::npos || line.find('|') != BitcoinExchange::date_width) {
 		std::cout << "Error: bad input => " << line << "\n";
 		errno = EBADINPUT;
@@ -32,7 +31,7 @@ bool	parse_date(const std::string& line, std::string& date) {
 	return false;
 }
 
-bool	parse_value(const std::string& line, double& value) {
+bool	parse_value(const std::string &line, double &value) {
 	value = std::strtod(line.substr(line.find('|') + 1, line.find("\n\0")).c_str(), NULL);
 
 	if (value <= 0) {
@@ -47,7 +46,7 @@ bool	parse_value(const std::string& line, double& value) {
 	return false;
 }
 
-bool	has_header(const std::string& first_line) {
+bool	has_header(const std::string &first_line) {
 	if (first_line.substr().substr(0, 4) != "date"
 		|| first_line.substr().substr(7, 5) != "value") {
 		return false;
@@ -55,7 +54,7 @@ bool	has_header(const std::string& first_line) {
 	return true;
 }
 
-bool	get_closest_date(const std::string& str_date, const std::string& str_upper_date) {
+bool	get_closest_date(const std::string &str_date, const std::string &str_upper_date) {
 	struct tm date = {}, upper_date = {};
 
 	strptime(str_date.c_str(), "%Y-%m-%d", &date);
@@ -70,7 +69,7 @@ bool	get_closest_date(const std::string& str_date, const std::string& str_upper_
 	return false;
 }
 
-bool	input_file_health_check(const char* file_name, std::ifstream& input_file) {
+bool	input_file_health_check(const char *file_name, std::ifstream &input_file) {
 	if (file_name) {
 		input_file.open(file_name);
 		if (!input_file.is_open()) {
@@ -82,7 +81,7 @@ bool	input_file_health_check(const char* file_name, std::ifstream& input_file) {
 	return false;
 }
 
-BitcoinExchange database_creation(const char* database_file_name) {
+BitcoinExchange database_creation(const char *database_file_name) {
 	BitcoinExchange	btc_exchanger;
 
 	if (database_file_name) {
@@ -93,7 +92,7 @@ BitcoinExchange database_creation(const char* database_file_name) {
 	return	btc_exchanger;
 }
 
-void	display_btc_value(const char* file_name, const char* database_file_name) {
+void	display_btc_value(const char *file_name, const char *database_file_name) {
 	std::ifstream	input_file;
 
 	if (input_file_health_check(file_name, input_file)) {
@@ -136,7 +135,7 @@ int	main(int, char **argv) {
 	try {
 		display_btc_value(argv[1], argv[2]);
 	}
-	catch (const std::exception& e) {
+	catch (const std::exception &e) {
 		std::cout << "Error: " << e.what() << "\n";
 	}
 	return 0;

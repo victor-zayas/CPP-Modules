@@ -8,7 +8,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &cpy) {
 	this->max_year = cpy.min_year;
 }
 
-BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange &other) {
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) {
 	this->_database = other._database;
 	this->max_year = other.max_year;
 	this->max_year = other.min_year;
