@@ -3,7 +3,10 @@
 #include <vector>
 #include <deque>
 
+#include <algorithm>
 #include <iostream>
+#include <climits>
+
 class PmergeMe {
 private:
     std::deque<int>     _deque;
