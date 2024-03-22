@@ -36,15 +36,14 @@ int main(int argc, char **argv) {
 
             std::cout << "Time to process a range of " << argc - 1 << " elements with std::deque  : " << time << " us\n";
         }
-        catch (const std::exception &e) {
+        catch (const std::exception& e) {
             std::cout << "Error: " << e.what() << "\n";
             errno = EBADINPUT;
             return  1;
         }
-    } else {
+    }
+    else {
         std::cout << "Error: Invalid number of arguments\n";
         return  1;
     }
-
-    return  0;
 }
