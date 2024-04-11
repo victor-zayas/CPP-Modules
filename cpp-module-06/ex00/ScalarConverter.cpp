@@ -44,15 +44,21 @@ void	ScalarConverter::convert(std::string input) {
 	ScalarConverter::toDouble(input);
 }
 
-void ScalarConverter::toChar(std::string input) {
+void ScalarConverter::toChar(std::string input)
+{
 	std::cout << "char: ";
-	try {
-		if (std::isprint(static_cast<char>(std::atoi(input.c_str()))))
-			std::cout << "'" << static_cast<char>(std::atoi(input.c_str())) << "'" << std::endl;
-		else
-			std::cout << "Non displayable" << std::endl;
+	try
+	{
+		char ch = static_cast<char>(input[0]);
+        if (std::isprint(ch) && !std::isdigit(ch)) {
+            std::cout << "'" << ch << "'" << std::endl;
+        }
+        else {
+            std::cout << "Non displayable" << std::endl;
+        }
 	}
-	catch (std::exception &e) {
+	catch (std::exception &e)
+	{
 		if (input.length() == 1 && std::isprint(input[0]))
 			std::cout << "'" << static_cast<char>(input[0]) << "'" << std::endl;
 		else
