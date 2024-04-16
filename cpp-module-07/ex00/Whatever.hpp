@@ -1,13 +1,15 @@
 #ifndef WHATEVER_HPP
 #define WHATEVER_HPP
 
+#include <iostream>
+
 template<typename T>
 void    swap(T &a, T &b) {
-    T   tmp;
+    T   aux;
 
-    tmp = a;
+    aux = a;
     a = b;
-    b = tmp;
+    b = aux;
 }
 
 template<typename T>

@@ -1,7 +1,7 @@
 NAME = Whatever
 
 CXX = clang++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 # ASCII COLORS #
 RED=\033[0;31m
@@ -10,7 +10,7 @@ BLUE=\033[0;34m
 YELLOW=\033[0;33m
 END=\033[0m
 
-SRCS =	main.cpp		\
+SRCS =	main.cpp	\
 
 OBJS = $(SRCS:%.cpp=%.o)
 
