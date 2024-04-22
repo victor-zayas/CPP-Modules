@@ -1,6 +1,6 @@
 #include "Span.hpp"
 
-Span::Span(): _vector(0), _size(0) {}
+Span::Span(): _vector(0), _size(0) {throw (std::exception());}
 
 Span::Span(unsigned int val): _size(val) {
     this->_vector.reserve(this->_size);
@@ -34,7 +34,7 @@ const Span	&Span::operator=(const Span &copy) {
 Span::~Span() {}
 
 void    Span::addNumber(unsigned int nb) {
-    if (this->_vector.size() == _size)
+    if (this->_vector.size() == this->_size)
         throw std::runtime_error("vector is full");
     this->_vector.push_back(nb);
 }
@@ -60,4 +60,16 @@ int	Span::longestSpan(void) const {
 	int min = *std::min_element(_vector.begin(), _vector.end());
 	int max = *std::max_element(_vector.begin(), _vector.end());
 	return max - min;
+}
+
+void	Span::addNumbers(void)
+{
+    std::srand(std::time(0));
+
+    while (this->_size != 0)
+    {
+        int random_number = std::rand();
+        this->_vector.push_back(random_number);
+        this->_size--;
+    }	
 }
