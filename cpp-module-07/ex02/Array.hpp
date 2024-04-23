@@ -15,25 +15,38 @@ class Array {
 			this->_array = new T[0]; this->_size = 0;
 		};
 
-		Array<T>(unsigned int _numberOfElements) {
-			this->_array = new T[_numberOfElements]; this->_size = _numberOfElements;
+		Array<T>(unsigned int size) {
+			this->_array = new T[size]; this->_size = size;
 		};
 
-		Array<T>(const Array<T> &_copy) {
-			_size = _copy._size; this->_array = new T[_size]; for (size_t index = 0; index < this->_size; index++) this->_array[index] = _copy._array[index];
+		Array<T>(const Array<T> &copy) {
+			_size = copy._size; this->_array = new T[_size]; for (size_t index = 0; index < this->_size; index++) this->_array[index] = copy._array[index];
 		};
 
-		T	&operator=(const Array<T> &_copy) {
-			this->_array = new T[this->_size]; for (size_t index; index < this->_size; index++) this->_array[index] = _copy._array[index]; return (*this);
+		T	&operator=(const Array<T> &other) {
+			this->_array = new T[this->_size]; for (size_t index; index < this->_size; index++) this->_array[index] = other._array[index]; return (*this);
 		};
 
-		T	&operator[](int _reference) {
-			if (_reference < 0) throw std::exception(); if (_reference > (int)this->_size) throw std::exception(); return(this->_array[_reference]);
+		T	&operator[](int index) const{
+			if (index < 0) throw std::exception(); if (index > (int)this->_size) throw std::exception(); return(this->_array[index]);
 		};
 		
 		size_t	size(void) const {
 			return (this->_size);
 		};
 };
+
+template <typename T>
+std::ostream &operator<<(std::ostream &os, const Array<T> &array) {
+    os << "[";
+    for (size_t i = 0; i < array.size(); ++i) {
+        os << array[i];
+        if (i < array.size() - 1) {
+            os << ", ";
+        }
+    }
+    os << "]";
+    return os;
+}
 
 #endif

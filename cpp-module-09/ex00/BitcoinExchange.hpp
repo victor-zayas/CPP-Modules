@@ -1,32 +1,45 @@
-#ifndef BITCOIN_EXCHANGE_HPP
-#define BITCOIN_EXCHANGE_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/19 17:46:34 by abasante          #+#    #+#             */
+/*   Updated: 2024/04/23 18:04:12 by vzayas-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
 
 #include <iostream>
-#include <cstdlib>
-#include <iomanip>
-#include <cstdlib>
 #include <fstream>
+#include <cstdlib>
+#include <string>
+#include <cmath>
 #include <map>
 
 class BitcoinExchange {
 private:
-	std::map<std::string, float>	_database;
-	std::ifstream					_input_file;
+    std::map<std::string, float> _data;
+    std::string _date;
+    double _rate;
 
 public:
-	unsigned short 				min_year;
-	unsigned short 				max_year;
-	static const unsigned short	date_width = 11;
+    BitcoinExchange();
+    BitcoinExchange(const BitcoinExchange &copy);
+    BitcoinExchange &operator=(const BitcoinExchange &other);
+    ~BitcoinExchange();
 
-	BitcoinExchange();
-	BitcoinExchange(const BitcoinExchange &cpy);
-	BitcoinExchange &operator=(const BitcoinExchange &other);
-	~BitcoinExchange();
+    void getCsv(const std::string &database);
+    std::string getDate(std::string date);
 
-    const std::ifstream				&GetInputFile() const;
-	const std::map<std::string, float> &GetDatabase() const;
+    void parse_line(std::string date, std::string rate);
+    void parse_input(std::string file);
 
-	void	CreateDatabase(const char *database_name);
+    int  validDate(std::string date);
+    int  validRate(std::string rate);
 };
 
 #endif
