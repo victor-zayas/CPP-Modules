@@ -1,7 +1,7 @@
 NAME = Easyfind
 
 CXX = clang++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 --pedantic
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 # ASCII COLORS #
 RED=\033[0;31m
